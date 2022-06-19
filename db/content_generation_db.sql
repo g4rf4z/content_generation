@@ -28,15 +28,15 @@ FOREIGN KEY (school_id) REFERENCES schools(school_id),
 FOREIGN KEY (sport_id) REFERENCES sports(sport_id)
 ) ENGINE=InnoDB CHARSET=utf8 COLLATE utf8_general_ci;
 
-DROP TABLE IF EXISTS `students_db`;
-CREATE TABLE IF NOT EXISTS `students_db` (
-  `id_db` int NOT NULL AUTO_INCREMENT,
-  `firstname_db` VARCHAR(45) NOT NULL,
-  `lastname_db` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id_db`)
+DROP TABLE IF EXISTS `data`;
+CREATE TABLE IF NOT EXISTS `data` (
+  `data_id` int NOT NULL AUTO_INCREMENT,
+  `data_firstname` VARCHAR(45) NOT NULL,
+  `data_lastname` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`data_id`)
 ) ENGINE=InnoDB CHARSET=utf8 COLLATE utf8_general_ci;
 
-INSERT INTO students_db (id_db, firstname_db, lastname_db) 
+INSERT INTO data (data_id, data_firstname, data_lastname) 
      VALUES
           (1, 'Kyle', 'Mccann'),
           (2, 'Vanessa', 'Vaughan'),

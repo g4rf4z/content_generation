@@ -1,22 +1,27 @@
 <?php
 
-include_once "inc/function.php";
+include_once "inc/truncate.php";
 
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Content Generator</title>
 </head>
+
 <body>
-    <form action="inc/function.php" method="post">
-        <button type="submit" name="truncate" value="true">Reset</button>
+    <!-- Reset -->
+    <form action="inc/truncate.php" method="post">
+        <button type="submit" name="truncate">Truncate</button>
     </form>
 
-    <form action="inc/function.php" method="post">
-        <button type="submit" name="insert" value="true">Insert</button>
+    <form action="inc/input.php" method="post">
+        <input type="number" name="input" min="0" required></input>
+        <button type="submit" name="submit">Send</button>
     </form>
 </body>
+
 </html>
