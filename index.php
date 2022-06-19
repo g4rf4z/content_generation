@@ -19,6 +19,7 @@ include "inc/truncate.php";
         <button type="submit" name="truncate">Reset</button>
     </form>
 
+    <!-- Champ input -->
     <form action="inc/input.php" method="post">
         <input type="number" name="input" min="0" required></input>
         <button type="submit" name="submit">Send</button>

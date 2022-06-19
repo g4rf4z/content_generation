@@ -2,7 +2,7 @@
 
 include "connection.php";
 
-
+// Requête préparée
 if (!empty($_POST["input"]) && 0 < $_POST["input"]) { // Si input n'est pas vide et est supérieur à 0
 
 
