@@ -1,6 +1,6 @@
 <?php
 
-include_once "inc/truncate.php";
+include "inc/truncate.php";
 
 ?>
 
@@ -15,7 +15,7 @@ include_once "inc/truncate.php";
 <body>
     <!-- Reset -->
     <form action="inc/truncate.php" method="post">
-        <button type="submit" name="truncate">Truncate</button>
+        <button type="submit" name="truncate">Reset</button>
     </form>
 
     <form action="inc/input.php" method="post">

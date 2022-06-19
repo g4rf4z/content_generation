@@ -1,13 +1,11 @@
 <?php
 
-// truncate table
-function truncate()
-{
-    include "connection.php";
-    $truncate = $mysqli->query("TRUNCATE TABLE students");
-}
+include "connection.php";
+
+$truncate_stmt = $mysqli->prepare("TRUNCATE TABLE students");
+$truncate_stmt->execute();
 
 if (isset($_POST["truncate"])) {
-    truncate();
+    $truncate_stmt;
     header("Location:../index.php");
 }
