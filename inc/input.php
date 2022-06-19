@@ -2,28 +2,29 @@
 
 include "connection.php";
 
-// get value from input
-if (($_POST["input"]) != 0) {
-    $int = intval($_POST["input"]); //transforme string ou boolean en int    
-    for ($i = 0; $i < $int; $i++) {
-        // get random school
+// Obtention des entrées de l'input
+if (!empty($_POST["input"]) && 0 < $_POST["input"]) { // Si input n'est pas vide et supérieur à 0
 
-        // creer new while pour chaque bloc, réutiliser $dataRow
 
-        // get random sport
+    $input_value = intval($_POST["input"]); // $_POST["input"] est attribué à une variable: $input_value
 
-        // get random student
-        $selectData = "SELECT data_firstname, data_lastname FROM data ORDER BY RAND()";
-        $result = $mysqli->query($selectData);
-        while ($row = $result->fetch_array()) {
-            $dataRow["firstname"] = $row["data_firstname"];
-            $dataRow["lastname"] = $row["data_lastname"];
+
+    for ($i = 0; $i < $input_value; $i++) {
+
+
+        // Sélection d'un élève au hasard
+        $get_names_stmt = $mysqli->prepare("SELECT data_firstname, data_lastname FROM data ORDER BY RAND (?) LIMIT 1");
+        $get_names_stmt->bind_param('i', $input_value); // ("i" = integer, "$input_value" = valeur de l'entrée) La valeur de l'entrée est un integer
+        $get_names_stmt->execute();
+        $get_names_stmt->bind_result($firstname, $lastname); // Les résulats sont assignés aux variables $firstname et $lastname
+        $get_names_stmt->store_result();
+
+        $insert_names_stmt = $mysqli->prepare("INSERT INTO students (student_firstname, student_lastname) VALUES (?, ?)");
+        $insert_names_stmt->bind_param("ss", $firstname, $lastname); // ("ss" = deux string, "$firstname" = data_firstname, "$lastname" = data_lastname) Les deux variables sont des strings
+
+        while ($get_names_stmt->fetch()) {
+            $insert_names_stmt->execute();
         }
-        $mysqli->query("INSERT INTO students (student_firstname, student_lastname) VALUES ('" . $dataRow["firstname"] . "', '" . $dataRow["lastname"] . "')");
     }
-} else {
 }
 header("Location:../index.php");
-
-// convert string to integer
-$int = intval($_POST["input"]);
