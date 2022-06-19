@@ -1,23 +1,23 @@
-DROP DATABASE IF EXISTS content_generation_db;
+DROP DATABASE IF EXISTS content_generation;
 
-CREATE DATABASE IF NOT EXISTS content_generation_db CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE IF NOT EXISTS content_generation CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-USE content_generation_db;
+USE content_generation;
 
 DROP TABLE IF EXISTS `students`, `schools`, `sports`;
 
-CREATE TABLE IF NOT EXISTS `content_generation_db`.`schools` (
+CREATE TABLE IF NOT EXISTS `content_generation`.`schools` (
      `school_id` INT(11) NOT NULL AUTO_INCREMENT, 
      `school_name` VARCHAR(45) NOT NULL,
      `student_id` INT,  
      PRIMARY KEY (`school_id`)) ENGINE=InnoDB CHARSET=utf8 COLLATE utf8_general_ci;
 
-CREATE TABLE IF NOT EXISTS `content_generation_db`.`sports` (
+CREATE TABLE IF NOT EXISTS `content_generation`.`sports` (
      `sport_id` INT(11) NOT NULL AUTO_INCREMENT, 
      `sport_name` VARCHAR(45) NOT NULL,  
      PRIMARY KEY (`sport_id`)) ENGINE=InnoDB CHARSET=utf8 COLLATE utf8_general_ci;
 
-CREATE TABLE IF NOT EXISTS `content_generation_db`.`students` (
+CREATE TABLE IF NOT EXISTS `content_generation`.`students` (
      `student_id` INT(11) NOT NULL AUTO_INCREMENT, 
      `student_firstname` VARCHAR(45) NOT NULL,
      `student_lastname` VARCHAR(45) NOT NULL,
@@ -28,15 +28,15 @@ FOREIGN KEY (school_id) REFERENCES schools(school_id),
 FOREIGN KEY (sport_id) REFERENCES sports(sport_id)
 ) ENGINE=InnoDB CHARSET=utf8 COLLATE utf8_general_ci;
 
-DROP TABLE IF EXISTS `data`;
-CREATE TABLE IF NOT EXISTS `data` (
+DROP TABLE IF EXISTS `students_data`;
+CREATE TABLE IF NOT EXISTS `students_data` (
   `data_id` int NOT NULL AUTO_INCREMENT,
   `data_firstname` VARCHAR(45) NOT NULL,
   `data_lastname` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`data_id`)
 ) ENGINE=InnoDB CHARSET=utf8 COLLATE utf8_general_ci;
 
-INSERT INTO data (data_id, data_firstname, data_lastname) 
+INSERT INTO students_data (data_id, data_firstname, data_lastname) 
      VALUES
           (1, 'Kyle', 'Mccann'),
           (2, 'Vanessa', 'Vaughan'),

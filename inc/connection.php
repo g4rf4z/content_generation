@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "content_generation_db";
+$database = "content_generation";
 
 // Create mysqli connection
 $mysqli = new mysqli($servername, $username, $password, $database);

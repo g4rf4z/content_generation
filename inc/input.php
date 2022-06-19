@@ -13,7 +13,7 @@ if (!empty($_POST["input"]) && 0 < $_POST["input"]) { // Si input n'est pas vide
 
 
         // Sélection d'un ou plusieurs élève(s) aléatoire(s)
-        $get_names_stmt = $mysqli->prepare("SELECT data_firstname, data_lastname FROM data ORDER BY RAND (?) LIMIT 1");
+        $get_names_stmt = $mysqli->prepare("SELECT data_firstname, data_lastname FROM students_data ORDER BY RAND (?) LIMIT 1");
         $get_names_stmt->bind_param('i', $input_value); // ("i" = integer, "$input_value" = valeur de l'entrée) La valeur de l'entrée est un integer
         $get_names_stmt->execute();
         $get_names_stmt->bind_result($firstname, $lastname); // Les résulats sont assignés aux variables $firstname et $lastname
