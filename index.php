@@ -1,5 +1,6 @@
 <?php
 
+include "inc/connection.php";
 include "inc/truncate.php";
 
 ?>
@@ -13,7 +14,7 @@ include "inc/truncate.php";
 </head>
 
 <body>
-    <!-- Reset -->
+    <!-- Bouton truncate -->
     <form action="inc/truncate.php" method="post">
         <button type="submit" name="truncate">Reset</button>
     </form>

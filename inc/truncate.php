@@ -2,10 +2,10 @@
 
 include "connection.php";
 
-$truncate_stmt = $mysqli->prepare("TRUNCATE TABLE students");
-$truncate_stmt->execute();
-
+// Requête préparée truncate
 if (isset($_POST["truncate"])) {
-    $truncate_stmt;
+
+    $truncate_stmt = $mysqli->prepare("TRUNCATE TABLE students");
+    $truncate_stmt->execute();
     header("Location:../index.php");
 }
