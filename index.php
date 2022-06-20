@@ -13,12 +13,12 @@ include "inc/connection.php";
 </head>
 
 <body>
-    <!-- Bouton truncate -->
+    <!-- Truncate button -->
     <form action="inc/truncate.php" method="post">
         <button type="submit" name="truncate">Reset</button>
     </form>
 
-    <!-- Champ input -->
+    <!-- Input -->
     <form action="inc/input.php" method="post">
         <input type="number" name="input" min="0" required></input>
         <button type="submit" name="submit">Send</button>
