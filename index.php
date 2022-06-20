@@ -1,7 +1,6 @@
 <?php
 
 include "inc/connection.php";
-include "inc/truncate.php";
 
 ?>
 

@@ -2,7 +2,6 @@
 
 include "connection.php";
 
-// Requête préparée
 if (isset($_POST["truncate"])) {
 
     $truncate_stmt = $mysqli->prepare("TRUNCATE TABLE students");

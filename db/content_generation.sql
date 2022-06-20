@@ -64,14 +64,7 @@ INSERT INTO students_data (data_id, data_firstname, data_lastname)
           (24, 'Jennifer', 'Johnston'),
           (25, 'Lisa', 'Wilson');
 
-DROP TABLE IF EXISTS `sports_data`;
-CREATE TABLE IF NOT EXISTS `sports_data` (
-  `sport_id` int NOT NULL AUTO_INCREMENT,
-  `sport_name` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`sport_id`)
-) ENGINE=InnoDB CHARSET=utf8 COLLATE utf8_general_ci;
-
-INSERT INTO sports_data (sport_id, sport_name) 
+INSERT INTO sports (sport_id, sport_name) 
      VALUES
           (1, 'Boxe'),
           (2, 'Judo'),
@@ -79,14 +72,7 @@ INSERT INTO sports_data (sport_id, sport_name)
           (4, 'Natation'),
           (5, 'Cyclisme');
 
-DROP TABLE IF EXISTS `schools_data`;
-CREATE TABLE IF NOT EXISTS `schools_data` (
-  `school_id` int NOT NULL AUTO_INCREMENT,
-  `school_name` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`school_id`)
-) ENGINE=InnoDB CHARSET=utf8 COLLATE utf8_general_ci;
-
-INSERT INTO schools_data (school_id, school_name) 
+INSERT INTO schools (school_id, school_name) 
      VALUES
           (1, 'A'),
           (2, 'B'),
