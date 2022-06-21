@@ -13,8 +13,11 @@ CREATE TABLE IF NOT EXISTS `content_generation`.`schools` (
      PRIMARY KEY (`school_id`)) ENGINE=InnoDB CHARSET=utf8 COLLATE utf8_general_ci;
 
 CREATE TABLE IF NOT EXISTS `content_generation`.`sports` (
-     `sport_id` INT(11) NOT NULL AUTO_INCREMENT, 
-     `sport_name` VARCHAR(45) NOT NULL,  
+     `sport_id` INT(11) NOT NULL AUTO_INCREMENT,
+     `sport_name` VARCHAR(45) NOT NULL,
+     `sport_1` VARCHAR(45) NOT NULL,
+     `sport_2` VARCHAR(45) NOT NULL,
+     `sport_3` VARCHAR(45) NOT NULL,  
      PRIMARY KEY (`sport_id`)) ENGINE=InnoDB CHARSET=utf8 COLLATE utf8_general_ci;
 
 CREATE TABLE IF NOT EXISTS `content_generation`.`students` (
@@ -64,13 +67,13 @@ INSERT INTO students_data (data_id, data_firstname, data_lastname)
           (24, 'Jennifer', 'Johnston'),
           (25, 'Lisa', 'Wilson');
 
-INSERT INTO sports (sport_id, sport_name) 
+INSERT INTO sports (sport_id,sport_name, sport_1, sport_2, sport_3) 
      VALUES
-          (1, 'Boxe'),
-          (2, 'Judo'),
-          (3, 'Football'),
-          (4, 'Natation'),
-          (5, 'Cyclisme');
+          (1, 'Boxe', '', '', ''),
+          (2, 'Judo', '', '', ''),
+          (3, 'Football', '', '', ''),
+          (4, 'Natation', '', '', ''),
+          (5, 'Cyclisme', '', '', '');
 
 INSERT INTO schools (school_id, school_name) 
      VALUES

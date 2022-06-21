@@ -2,11 +2,11 @@
 
 include "connection.php";
 
-
-// Truncate prepared statement
+// Truncate table
 if (isset($_POST["truncate"])) {
 
-    $truncate_stmt = $mysqli->prepare("TRUNCATE TABLE students");
-    $truncate_stmt->execute();
-    header("Location:../index.php");
+    $truncate = ("TRUNCATE TABLE students");
+    $result = $mysqli->query($truncate);
+    $mysqli->query($truncate);
 }
+header("Location:../index.php");
